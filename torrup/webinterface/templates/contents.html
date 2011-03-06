@@ -1,0 +1,15 @@
+{% extends "bases.html" %}
+{% block content %}
+<div id="content">
+    {% for item in films %}
+		<h3><a href="/django/my_blog/films/{{ item.id }}">{{ item.title_rus }}/{{item.title_orig}}</a></h3>
+        <h2>Добавлен:  {{ item.pubdate }}</h2>
+        <p><br>
+			<b>Жанр:</b> 	 {{ item.genre.all|join:", " }}<br>
+			<b>Режисер:</b>  {{ item.directors.all|join:", " }}<br>
+			<b>Актеры:</b> 	 {{ item.actors.all|join:", " }}<br>
+			<b>Краткое описание:</b> {{ item.description|slice:":200"|add:"..." }}<br>
+		</p>
+    {% endfor %}
+</div>
+{% endblock %}

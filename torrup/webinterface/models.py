@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.contrib.auth.models import User
 
-class Profile(models.Model):
+class Profile(User):
     login = models.CharField(max_length = 100)
     pass_hash = models.CharField(max_length = 550)
     

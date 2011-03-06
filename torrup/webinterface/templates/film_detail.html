@@ -1,0 +1,25 @@
+{% extends "bases.html" %}
+{% block content %}
+<div id="content">
+	<h1>{{ film.title_rus }}/{{ film.title_orig }}</h1>
+	<hr>
+	<table>
+		<tr>
+			<td><img align=left src={{ film.cover }} width=150 height=200 hspace=10></td>
+			<td><p><br>
+					<b>Год выпуска:</b> {{ film.release_date }}<br>
+					<b>Страна:</b> {{ film.country.all|join:", " }}<br>
+					<b>Длительность:</b> {{ film.last_time }}<br>
+					<b>Жанр:</b> 	 {{ film.genre.all|join:", " }}<br>
+					<b>Режисер:</b>  {{ film.directors.all|join:", " }}<br>
+					<b>Актеры:</b> 	 {{ film.actors.all|join:", " }}<br>
+					<b>Описание:</b> {{ film.description }}<br>
+					<!--b>Видео:</b> {{ film.resolution_x }}x{{ film.resolution_y }}<br-->
+					<a href={{ film.down_url }}>Скачать</a>
+				</p>
+			</td>
+		</tr>
+	</table>
+	
+</div>
+{% endblock %}

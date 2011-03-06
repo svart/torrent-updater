@@ -1,0 +1,26 @@
+{% extends "bases.html" %}
+{% block content %}
+<div id="content">
+	<form action="../registered/" method="get">
+        <table>
+            <tr>
+                <td> <p>Логин:</p> </td>
+                <td> <input type="text" name="login"> </td>
+            </tr>
+            <tr>
+                <td> <p>Пароль:</p> </td> 
+                <td> <input type="password" name="password1"> </td>
+            </tr>
+            <tr>
+                <td> <p>Подтверждение пароля:</p> </td>
+                <td> <input type="password" name="password2"> </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td> <input type="submit" value="Зарегестрироваться"> </td>
+            </tr>
+        </table>
+	</form>
+</div>
+{% endblock %}
+
