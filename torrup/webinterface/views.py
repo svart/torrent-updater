@@ -10,7 +10,7 @@ from torrup.webinterface.models import *
 
 # Вывод формы регистрации
 def registration_form(request):
-    return render_to_response('registration_form.html')
+    return render_to_response('registration_form.html', {'show_form':True, 'message':''})
     
 # Обработка заполненной формы и вывод поздравления о регистрации
 @csrf_exempt
@@ -20,15 +20,30 @@ def registration(request):
     get_password2 = request.POST.get('password2','')
     
     profile = Profile.objects.filter(username=get_login)
+    # Проверка, существует ли пользователь с таким именем.
     if profile:
-        return HttpResponse("Такой уже есть!")
+        return render_to_response('registration_form.html', {'last_login':get_login, 
+                                                             'last_password1':get_password1, 
+                                                             'last_password2':get_password2,
+                                                             'show_form':True, 
+                                                             'message':'Пользователь с таким именем уже существует.'})
+    # Проверка, являются ли введенные пароли одинаковыми
     elif get_password1 == get_password2 and get_password1 != '' and get_password2 != '':
         profile = Profile(username=get_login)
         profile.set_password(get_password1)
         profile.save()
 
-        return HttpResponse('OK!')
+        return render_to_response('registration_form.html', {'last_login':get_login, 
+                                                             'last_password1':get_password1, 
+                                                             'last_password2':get_password2,
+                                                             'show_form':False, 
+                                                             'message':'Поздравляем, вы успешно зарегистрировались.'})
+    # Если пароли не одинаковые
     else:
-        return HttpResponse("Пароли не совпадают")
+        return render_to_response('registration_form.html', {'last_login':get_login, 
+                                                             'last_password1':get_password1, 
+                                                             'last_password2':get_password2,
+                                                             'show_form':True, 
+                                                             'message':'Пароли не совпадают.'})
 
     #return HttpResponseRedirect('../registration/')

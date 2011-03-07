@@ -1,26 +1,29 @@
 {% extends "bases.html" %}
 {% block content %}
 <div id="content">
-	<form action="../registered/" method="POST">{% csrf_token %}
-        <table>
-            <tr>
-                <td> <p>Логин:</p> </td>
-                <td> <input type="text" name="login"> </td>
-            </tr>
-            <tr>
-                <td> <p>Пароль:</p> </td> 
-                <td> <input type="password" name="password1"> </td>
-            </tr>
-            <tr>
-                <td> <p>Подтверждение пароля:</p> </td>
-                <td> <input type="password" name="password2"> </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td> <input type="submit" value="Зарегестрироваться"> </td>
-            </tr>
-        </table>
-	</form>
+    <p>{{ message }}</p>
+    {% if show_form %}
+        <form action="../registered/" method="POST">{% csrf_token %}
+            <table>
+                <tr>
+                    <td> <p>Логин:</p> </td>
+                    <td> <input type="text" name="login" value="{{ last_login }}"> </td>
+                </tr>
+                <tr>
+                    <td> <p>Пароль:</p> </td> 
+                    <td> <input type="password" name="password1" value="{{ last_password1 }}"> </td>
+                </tr>
+                <tr>
+                    <td> <p>Подтверждение пароля:</p> </td>
+                    <td> <input type="password" name="password2" value="{{ last_password2 }}"> </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> <input type="submit" value="Зарегестрироваться"> </td>
+                </tr>
+            </table>
+        </form>
+    {% endif %}
 </div>
 {% endblock %}
 
