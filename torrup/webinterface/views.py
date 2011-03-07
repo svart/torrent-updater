@@ -33,10 +33,7 @@ def registration(request):
         profile.set_password(get_password1)
         profile.save()
 
-        return render_to_response('registration_form.html', {'last_login':get_login, 
-                                                             'last_password1':get_password1, 
-                                                             'last_password2':get_password2,
-                                                             'show_form':False, 
+        return render_to_response('registration_form.html', {'show_form':False, 
                                                              'message':'Поздравляем, вы успешно зарегистрировались.'})
     # Если пароли не одинаковые
     else:
@@ -47,3 +44,18 @@ def registration(request):
                                                              'message':'Пароли не совпадают.'})
 
     #return HttpResponseRedirect('../registration/')
+
+# Форма аутентификации пользователя
+def authentication_form(request):
+    if 'login' in request.POST and 'password' in request.POST:
+        # Обработать введенные логин и пароль, если правильно, то аутентифицировать пользователя
+        # и перевести его на страницу с трекерами.
+        # иначе вывести опять форму и вывести сообщение об ошибке.
+        return HttpResponse('cablaaaam')
+    else:
+        return render_to_response('authentification_form.html', {'show_form':True})
+    
+# Основная страциа пользователя: список трекеров
+def tracker_list(request):
+    pass
+    
