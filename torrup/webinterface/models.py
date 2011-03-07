@@ -3,8 +3,9 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Profile(User):
-    login = models.CharField(max_length = 100)
-    pass_hash = models.CharField(max_length = 550)
+    pass
+    #login = models.CharField(max_length = 100)
+    #pass_hash = models.CharField(max_length = 550)
     
 class Tracker(models.Model):
     profile = models.ForeignKey(Profile)

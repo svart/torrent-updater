@@ -1,7 +1,7 @@
 {% extends "bases.html" %}
 {% block content %}
 <div id="content">
-	<form action="../registered/" method="get">
+	<form action="../registered/" method="POST">{% csrf_token %}
         <table>
             <tr>
                 <td> <p>Логин:</p> </td>

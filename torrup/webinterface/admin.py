@@ -2,6 +2,9 @@
 from django.contrib import admin
 from webinterface.models import *
 
-admin.site.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('username',)
+
+admin.site.register(Profile, ProfileAdmin)
 admin.site.register(Tracker)
 admin.site.register(Topic)
