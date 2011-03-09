@@ -3,8 +3,7 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
-
-import hashlib
+from django.contrib.auth import authenticate, login, logout
 
 from torrup.webinterface.models import *
 
@@ -46,16 +45,21 @@ def registration(request):
     #return HttpResponseRedirect('../registration/')
 
 # Форма аутентификации пользователя
+@csrf_exempt
 def authentication_form(request):
     if 'login' in request.POST and 'password' in request.POST:
-        # Обработать введенные логин и пароль, если правильно, то аутентифицировать пользователя
-        # и перевести его на страницу с трекерами.
-        # иначе вывести опять форму и вывести сообщение об ошибке.
-        return HttpResponse('cablaaaam')
+        profile = authenticate(username=request.POST.get('login'), password=request.POST.get('password'))
+        if profile:
+            login(request, profile)
+            return HttpResponseRedirect('/torrup/')
+        else:
+            return render_to_response('authentification_form.html', {'show_form':True,
+                                                                     'message':'Неверно введен логин или пароль.'})
+    # Показываем просто форму без сообщения, если это первый раз
     else:
         return render_to_response('authentification_form.html', {'show_form':True})
     
 # Основная страциа пользователя: список трекеров
-def tracker_list(request):
-    pass
+def main_page(request):
+    return HttpResponse("hello")
     

@@ -5,6 +5,6 @@ urlpatterns = patterns('',
     url(r'auth/registration/$', registration_form),
     url(r'auth/registered/$', registration),
     url(r'auth/$', authentication_form),
-    url(r'^$', tracker_list),
+    url(r'^$', main_page),
     url(r'^(.*)media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/svart/Work/torrent-updater/torrup/webinterface/media'}),
 )
