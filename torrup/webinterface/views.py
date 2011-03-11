@@ -59,5 +59,7 @@ def authentication_form(request):
 
 # Основная страциа пользователя: список трекеров
 def main_page(request):
-    return render_to_response('trackers_topics.html')
+    #profile = Profile.objects.get(username=request.user.username)
+    trackers = Tracker.objects.filter(profile__username=request.user.username)
+    return render_to_response('trackers_topics.html', {'trackers':trackers})
     

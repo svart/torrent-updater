@@ -4,6 +4,37 @@
 {% endblock %}
 {% block content %}
     <div id="content">
+    <table width=100%><tr>
+        <td id="tracker_list" width=20%> 
+            <ul>
+                {% block tracker_list %}
+                
+                    {% if trackers %}
+                    
+                        {% for tracker in trackers %}
+                            <li><a href="#">Tracker_2</a></li> 
+                        {% endfor %}
+                        
+                    {% else %}
+                        <li>No Trackers</li>
+                    {% endif %}
+                    
+                {% endblock %}
+            </ul> 
+        </td>
+        <td id="topic_list">
+            <ul>
+                {% block topic_list %}
+                    <li><a href="#">Topic_1</a></li> 
+                    <li><a href="#">Topic_2</a></li> 
+                    <li><a href="#">Topic_3</a></li> 
+                    <li><a href="#">Topic_4</a></li> 
+                    <li><a href="#">Topic_5</a></li> 
+                {% endblock %}
+            </ul> 
+        </td>
+
+    </tr></table>
        
     </div>
 {% endblock %}

@@ -18,4 +18,5 @@ class Topic(models.Model):
     name = models.CharField(max_length = 500)
     update_time = models.DateTimeField()            # Сколько времени назад была обновлена раздача
     recheck_time = models.DateTimeField()           # Время проверки состояния раздачи
+    # 
 

@@ -92,7 +92,7 @@ body{
 
 /* Styles the 'p'-tag. */
 
-p{
+p, ul, li, td{
  margin: 5px 30px 10px 30px;
  padding: 0;
  text-align: justify;
@@ -188,21 +188,6 @@ b{
 }
 
 
-/* The list ('li') holder. */
-
-ul{
- background-color: #fff;
-}
-
-
-/* Lists. */
-
-li{
- margin: 0 0 0 5px;
- padding: 0;
-}
-
-
 /* Styles all links on the page (without the menu, wich allready have been styled). */
 
 a{
@@ -219,5 +204,14 @@ a:hover{
  text-decoration: none;
 }
 
+#tracker_list {background-color: transparent; vertical-align:top; font-family:"Trebuchet MS", Arial, sans-serif; font-size:12px; font-weight:bold; color:#fff;}
+#tracker_list ul {list-style-type:none; padding:0; margin:15px 0 15px 0;}
+#tracker_list ul li {line-height:21px;}
+#tracker_list a {color:#000; text-decoration: none;}
+#tracker_list a:hover {color:#b5b4b7;}
 
-
+#topic_list {background-color: transparent; vertical-align:top; font-family:"Trebuchet MS", Arial, sans-serif; font-size:12px; font-weight:bold; color:#fff;}
+#topic_list ul {list-style-type:none; padding:0; margin:15px 0 15px 0;}
+#topic_list ul li {line-height:21px;}
+#topic_list a {color:#000; text-decoration: underline;}
+#topic_list a:hover {color:#b5b4b7;}
