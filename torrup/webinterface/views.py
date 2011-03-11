@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 
 from torrup.webinterface.models import *
 
@@ -33,7 +33,7 @@ def registration(request):
         profile.save()
 
         return render_to_response('registration_form.html', {'show_form':False, 
-                                                             'message':'Поздравляем, вы успешно зарегистрировались.'})
+                                                             'message':'Поздравляем, вы успешно зарегистрировались. Войдите в систему.'})
     # Если пароли не одинаковые
     else:
         return render_to_response('registration_form.html', {'last_login':get_login, 
@@ -41,8 +41,6 @@ def registration(request):
                                                              'last_password2':get_password2,
                                                              'show_form':True, 
                                                              'message':'Пароли не совпадают.'})
-
-    #return HttpResponseRedirect('../registration/')
 
 # Форма аутентификации пользователя
 @csrf_exempt
@@ -59,10 +57,6 @@ def authentication_form(request):
     else:
         return render_to_response('authentification_form.html', {'show_form':True})
 
-def logout_user(request):
-    logout(request)
-    return HttpResponseRedirect('/torrup/auth/')
-    
 # Основная страциа пользователя: список трекеров
 def main_page(request):
     return render_to_response('trackers_topics.html')
