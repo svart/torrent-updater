@@ -58,8 +58,12 @@ def authentication_form(request):
     # Показываем просто форму без сообщения, если это первый раз
     else:
         return render_to_response('authentification_form.html', {'show_form':True})
+
+def logout_user(request):
+    logout(request)
+    return HttpResponseRedirect('/torrup/auth/')
     
 # Основная страциа пользователя: список трекеров
 def main_page(request):
-    return HttpResponse("hello")
+    return render_to_response('trackers_topics.html')
     
