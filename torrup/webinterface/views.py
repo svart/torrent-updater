@@ -59,10 +59,21 @@ def authentication_form(request):
 
 # Основная страциа пользователя: список трекеров
 def main_page(request):
-    trackers = Tracker.objects.filter(profile__username=request.user.username)
-    topics = Topic.objects.filter(tracker__id=request.GET.get('tracker', None))
-    
-    return render_to_response('trackers_topics.html', {'trackers':trackers,
-                                                       'topics':topics,
-                                                       'username':request.user.username})
-    
+    #Показываем информацию по целому трекеру или просто выдаем список трекеров
+    if not request.GET.get('topic', None):
+        trackers = Tracker.objects.filter(profile__username=request.user.username)
+        selected_tracker = trackers.filter(id=request.GET.get('tracker', None))
+        if selected_tracker:
+            topics = Topic.objects.filter(tracker__id=selected_tracker[0].id)
+        else:
+            topics = None
+        return render_to_response('trackers_topics.html', {'trackers':trackers,
+                                                           'topics':topics,
+                                                           'username':request.user.username})
+    else:
+        try:
+            topic = Topic.objects.get(id=request.GET.get('topic', None))
+        except Topic.DoesNotExist:
+            topic = None
+        return render_to_response('topic_information.html', {'topic':topic,
+                                                             'username':request.user.username})

@@ -1,0 +1,32 @@
+{% extends "bases.html" %}
+{% block menu %}
+    <a href="/torrup/">{{ username }}</a>
+    <a href="/torrup/auth/logout/">Logout</a>
+{% endblock %}
+{% block content %}
+    <div id="content">
+    <center>
+    {% if topic %}
+        <table>
+            <tr>
+                <td colspan=2><h1>{{ topic.name }}</h1></td>
+            </tr>
+            <tr>
+                <td><h4>Размер: {{ topic.size }} </h4></td>
+                <td><h4>Обновлен: {{ topic.update_time }}</h4></td>
+            </tr>
+            <tr>
+                <td><h4>Сиды: {{ topic.seeds }} </h4></td>
+                <td><h4>Личи: {{ topic.leeches }}</h4></td>
+            </tr>
+            <tr>
+                <td colspan=2><h4>Статус обновляется каждые: {{topic.recheck_time}}</h4></td>
+            </tr>
+        </table>    
+    {% else %}
+        <p>No such topic.</p>
+    {% endif %}
+    </center>
+    </div>
+{% endblock %}
+
