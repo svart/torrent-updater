@@ -1,5 +1,6 @@
 {% extends "bases.html" %}
 {% block menu %}
+    <a href="/torrup/">{{ username }}</a>
     <a href="/torrup/auth/logout/">Logout</a>
 {% endblock %}
 {% block content %}
@@ -12,7 +13,7 @@
                     {% if trackers %}
                     
                         {% for tracker in trackers %}
-                            <li><a href="#">Tracker_2</a></li> 
+                            <li><a href="./?tracker={{ tracker.id }}">{{ tracker.name }}</a></li> 
                         {% endfor %}
                         
                     {% else %}
@@ -25,11 +26,17 @@
         <td id="topic_list">
             <ul>
                 {% block topic_list %}
-                    <li><a href="#">Topic_1</a></li> 
-                    <li><a href="#">Topic_2</a></li> 
-                    <li><a href="#">Topic_3</a></li> 
-                    <li><a href="#">Topic_4</a></li> 
-                    <li><a href="#">Topic_5</a></li> 
+                
+                    {% if topics %}
+                    
+                        {% for topic in topics %}
+                            <li><a href="./?topic={{ topic.id }}">{{ topic.name }}</a></li> 
+                        {% endfor %}
+                        
+                    {% else %}
+                        <li>No topics.</li>
+                    {% endif %}
+                    
                 {% endblock %}
             </ul> 
         </td>
