@@ -1,0 +1,1 @@
+wget  http://dl.rutracker.org/forum/dl.php?t=$1 -O $1.torrent --post-data="t=$1" --header="Content-Type: application/x-www-form-urlencoded" --referer=" http://rutracker.org/forum/viewtopic.php?t=$1" --load-cookies cookies --keep-session-cookies

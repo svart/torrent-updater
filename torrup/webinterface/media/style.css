@@ -1,217 +1,264 @@
-
 /* Styles the body. */
 
-body{
- background: #777675 url(./images/bg.png) repeat-x;
- font: 12px arial, sans-serif;
- color: #000;
- margin: 0; padding: 0;
- margin-bottom: 50px;
+body {
+    background: #777675 url(./images/bg.png) repeat-x;
+    font: 12px arial, sans-serif;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
 }
 
 /* The design-holder. */
 
-#holder{
- width: 80%; height: auto;
- margin:0 auto;
- padding-bottom: 25px;
- background-color: #F5F7F9;
- border-left: 2px #436C78 solid; border-right: 2px #436C78 solid; border-bottom: 2px #436C78 solid;
+#holder {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    padding-bottom: 25px;
+    background-color: #F5F7F9;
+    border-left: 2px #436C78 solid;
+    border-right: 2px #436C78 solid;
+    border-bottom: 2px #436C78 solid;
 }
-
 
 /* Gives all the below id's the same values. */
 
-#header, #menu, #undermenu, #content, #footer{
- position: relative;
- left: 0; top: 0;
- width: 100%;
+#header, #menu, #undermenu, #content, #footer {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
 }
-
 
 /* The header (with homepage name..). */
 
-#header{
- height: 160px;
- background: url(./images/menu-top-bg.png) repeat-x;
+#header {
+    height: 160px;
+    background: url(./images/menu-top-bg.png) repeat-x;
 }
-
 
 /* "Homepage name..." text above (bright coloured). */
 
-#header h1{
- position: absolute;
- left: 20px; bottom: 20px;
- margin: 0;
- font: 1.4em georgia, serif;
- color: #fff;
- z-index: 1;
+#header h1 {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    margin: 0;
+    font: 1.4em georgia, serif;
+    color: #fff;
+    z-index: 1;
 }
-
 
 /* "Homepage name..." text below (dark coloured). */
 
-#header h2{
- position: absolute;
- left: 21px; bottom: 19px;
- margin: 0;
- font: 1.4em georgia, serif;
- color: #3E515E;
- z-index: 0;
+#header h2 {
+    position: absolute;
+    left: 21px;
+    bottom: 19px;
+    margin: 0;
+    font: 1.4em georgia, serif;
+    color: #3E515E;
+    z-index: 0;
 }
-
 
 /* The menu. */
 
-#menu{
- height: 18px;
- padding-top: 2px;
- text-align: right;
- font: 1em arial, sans-serif;
+#menu {
+    height: 18px;
+    padding-top: 2px;
+    text-align: right;
+    font: 1em arial, sans-serif;
 }
 
- /* Fixes the links colours and such in the menu. */
-   #menu a{ color:#7A96A7; text-decoration:none; font-weight:bold; margin-left:10px; margin-right: 10px; }
-   #menu a:hover{ color:#000; text-decoration:none; margin-left:10px; margin-right: 10px; }
+/* Fixes the links colours and such in the menu. */
+#menu a {
+    color: #7A96A7;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
+#menu a:hover {
+    color: #000;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
 /* The fade-thingie below the menu. */
 
-#undermenu{
- height: 24px;
- background: url(./images/menu-bottom-bg.png) repeat-x;
+#undermenu {
+    height: 24px;
+    background: url(./images/menu-bottom-bg.png) repeat-x;
 }
-
 
 /* The content holder */
 
-#content{
- height: auto;
- background-color: transparent;
+#content {
+    height: auto;
+    background-color: transparent;
+    text-align: center;
 }
 
 /* Styles the 'p'-tag. */
 
-p, ul, li, td{
- margin: 5px 30px 10px 30px;
- padding: 0;
- text-align: justify;
- text-indent: 15px;
- font: 1em arial, sans-serif;
- line-height: 1.5em;
- color: #3E515E;
+p, ul, li, td {
+    margin: 5px 30px 10px 30px;
+    padding: 0;
+    text-align: justify;
+    text-indent: 15px;
+    font: 1em arial, sans-serif;
+    line-height: 1.5em;
+    color: #3E515E;
 }
-
 
 /* Use this (with the 'h4'-tag as header) if you want to quote something. */
 
-.quote{
- margin: 0 30px 10px 50px;
- font: italic 0.8em verdana, sans-serif;
- background-color: #fff;
- padding: 5px;
- text-indent: 0;
- border: 1px #aaa dotted;
+.quote {
+    margin: 0 30px 10px 50px;
+    font: italic 0.8em verdana, sans-serif;
+    background-color: #fff;
+    padding: 5px;
+    text-indent: 0;
+    border: 1px #aaa dotted;
 }
-
 
 /* Use this if you don't want first lines on all paragraph to be moved 15px inn */
 
-.noindent{
- text-indent: 0;
+.noindent {
+    text-indent: 0;
 }
-
 
 /* The biggest font. */
 
-h1{
- font: 2em "times new roman", serif;
- margin: 25px 0 0 30px;
- padding: 0;
- color: #3E515E;
+h1 {
+    font: 2em "times new roman", serif;
+    margin: 25px 0 0 30px;
+    padding: 0;
+    color: #3E515E;
 }
-
 
 /* The font below the biggest font. */
 
-h2{
- font: 0.8em georgia, serif;
- margin: -3px 0 0 35px;
- padding: 0;
- color: #aaa;
+h2 {
+    font: 0.8em georgia, serif;
+    margin: -3px 0 0 35px;
+    padding: 0;
+    color: #aaa;
 }
-
 
 /* Use this for paragraph titles. */
 
-h3{
- font: 1.4em verdana, serif;
- text-decoration: underline;
- margin: 20px 30px 0 30px;
- padding: 0;
- color: #3E515E;
- border-top: 1px dotted #000;
+h3 {
+    font: 1.4em verdana, serif;
+    text-decoration: underline;
+    margin: 20px 30px 0 30px;
+    padding: 0;
+    color: #3E515E;
+    border-top: 1px dotted #000;
 }
-
 
 /* Use this on all paragraphs (but not #quote) wich are part of the article/documentation/etc.. */
 
-.text{
- margin: 15px 30px 10px 30px;
+.text {
+    margin: 15px 30px 10px 30px;
 }
-
 
 /* The title to be used when displaying a quote with '#quote'. */
 
-h4{
- font: 1.2em georgia, serif;
- margin: 0 0 0 50px;
- padding: 0;
- color: #3E515E;
+h4 {
+    font: 1.2em georgia, serif;
+    margin: 0 0 0 50px;
+    padding: 0;
+    color: #3E515E;
 }
-
 
 /* Italic text. */
 
-i{
- font: 1em arial, sans-serif;
- font-style: italic;
- color: #000;
+i {
+    font: 1em arial, sans-serif;
+    font-style: italic;
+    color: #000;
 }
-
 
 /* Bold text. */
 
-b{
- font-weight: bold;
- color: #3E515E;
+b {
+    font-weight: bold;
+    color: #3E515E;
 }
-
 
 /* Styles all links on the page (without the menu, wich allready have been styled). */
 
-a{
- color: #000;
- font-weight: bold;
- text-decoration: underline;
+a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: underline;
 }
-
 
 /* Same as above, exept this is the hover (mouse-over) effect. */
 
-a:hover{
- color: #3E515E;
- text-decoration: none;
+a:hover {
+    color: #3E515E;
+    text-decoration: none;
 }
 
-#tracker_list {background-color: transparent; vertical-align:top; font-family:"Trebuchet MS", Arial, sans-serif; font-size:12px; font-weight:bold; color:#fff;}
-#tracker_list ul {list-style-type:none; padding:0; margin:15px 0 15px 0;}
-#tracker_list ul li {line-height:21px;}
-#tracker_list a {color:#000; text-decoration: none;}
-#tracker_list a:hover {color:#b5b4b7;}
+/* Стили для списка трекеров */
+#tracker_list {
+    background-color: transparent;
+    vertical-align: top;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+}
 
-#topic_list {background-color: transparent; vertical-align:top; font-family:"Trebuchet MS", Arial, sans-serif; font-size:12px; font-weight:bold; color:#fff;}
-#topic_list ul {list-style-type:none; padding:0; margin:15px 0 15px 0;}
-#topic_list ul li {line-height:21px;}
-#topic_list a {color:#000; text-decoration: underline;}
-#topic_list a:hover {color:#b5b4b7;}
+#tracker_list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 15px 0 15px 0;
+}
+
+#tracker_list ul li {
+    line-height: 21px;
+}
+
+#tracker_list a {
+    color: #000;
+    text-decoration: none;
+}
+
+#tracker_list a:hover {
+    color: #b5b4b7;
+}
+
+/* Стили для списка топиков для выбранного трекера */
+#topic_list {
+    background-color: transparent;
+    vertical-align: top;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#topic_list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 15px 0 15px 0;
+}
+
+#topic_list ul li {
+    line-height: 21px;
+}
+
+#topic_list a {
+    color: #000;
+    text-decoration: underline;
+}
+
+#topic_list a:hover {
+    color: #b5b4b7;
+}

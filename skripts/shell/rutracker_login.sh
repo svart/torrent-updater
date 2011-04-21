@@ -1,0 +1,1 @@
+wget --keep-session-cookies --save-cookies ./cookies --post-data 'login_username=$1&login_password=$2&login=%C2%F5%EE%E4'  http://login.rutracker.org/forum/login.php -O result.html

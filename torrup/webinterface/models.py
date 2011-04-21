@@ -11,6 +11,9 @@ class Tracker(models.Model):
     url = models.URLField()
     login = models.CharField(max_length = 100)
     password = models.CharField(max_length = 100)
+
+    def __unicode__(self):
+        return self.name
     
 class Topic(models.Model):
     tracker = models.ForeignKey(Tracker)
@@ -18,5 +21,7 @@ class Topic(models.Model):
     name = models.CharField(max_length = 500)
     update_time = models.DateTimeField()            # Сколько времени назад была обновлена раздача
     recheck_time = models.DateTimeField()           # Время проверки состояния раздачи
-    # 
+
+    def __unicode__(self):
+        return self.name
 
